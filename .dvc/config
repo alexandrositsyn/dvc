@@ -1,0 +1,4 @@
+[core]
+    remote = bikes
+['remote "bikes"']
+    url = s3://dvc-s3-onto

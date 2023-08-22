@@ -1,0 +1,30 @@
+name: Pull and Read CSV Files
+
+on: push
+
+jobs:
+  main-pipeline:
+    name: Main Pipeline
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.8'
+
+      - name: Install Python Packages
+        run: |
+          pip install -r requirements.txt
+
+      - name: Pull Data
+        run: |
+          dvc remote modify --local bikes access_key_id ${{ secrets.ACCESS_KEY_ID }}
+          dvc remote modify --local bikes secret_access_key ${{ secrets.SECRET_ACCESS_KEY }}
+          dvc pull
+
+      - name: Run Application
+        run: python app.py
