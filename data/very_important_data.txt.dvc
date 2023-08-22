@@ -1,0 +1,5 @@
+outs:
+- md5: 221d7970d9cb4349a905f3f105e2b1b8
+  size: 22
+  hash: md5
+  path: very_important_data.txt
