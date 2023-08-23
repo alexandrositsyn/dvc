@@ -1,0 +1,5 @@
+outs:
+- md5: a933377d426c66dcf01fbc1e409f1805
+  size: 34
+  hash: md5
+  path: very_important_file_number_3.txt
